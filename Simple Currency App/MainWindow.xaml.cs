@@ -24,5 +24,11 @@ namespace Simple_Currency_App
         {
             InitializeComponent();
         }
+
+        private void hitungButton_Click(object sender, RoutedEventArgs e)
+        {
+            var nominalString = inputTextBox.Text;
+            resultLabel.Content = "Rp. " + nominalString;
+        }
     }
 }
