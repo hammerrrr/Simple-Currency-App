@@ -21,26 +21,25 @@ namespace Simple_Currency_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        CurrencyController currencyController;
         public MainWindow()
         {
             InitializeComponent();
+            currencyController = new CurrencyController();
         }
 
         private void hitungButton_Click(object sender, RoutedEventArgs e)
         {
             var nominalString = inputTextBox.Text;
 
-            Regex regex = new Regex("[^0-9.-]+");
+            var result = "Inputan tidak valid";
 
-            if (!regex.IsMatch(nominalString))
+            if(currencyController.isAllowed(nominalString))
             {
-                var nominalDouble = Convert.ToDouble(nominalString);
-                resultLabel.Content = "Rp. " + Convert.ToString(nominalDouble * 4);
+                result = "Rp. " + currencyController.usdToIdr(nominalString);
             }
-            else
-            {
-                resultLabel.Content = "Inputan tidak valid";
-            }
+
+            resultLabel.Content = result;
             
         }
     }
