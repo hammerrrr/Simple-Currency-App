@@ -28,7 +28,8 @@ namespace Simple_Currency_App
         private void hitungButton_Click(object sender, RoutedEventArgs e)
         {
             var nominalString = inputTextBox.Text;
-            resultLabel.Content = "Rp. " + nominalString;
+            var nominalDouble = Convert.ToDouble(nominalString);
+            resultLabel.Content = "Rp. " + Convert.ToString(nominalDouble * 10000);
         }
     }
 }
