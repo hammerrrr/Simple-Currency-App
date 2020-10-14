@@ -13,9 +13,9 @@
         </Grid.ColumnDefinitions>
         <Label Content="USD" Grid.Column="1" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.073,0.33" BorderBrush="Black" BorderThickness="0.5,0.5,0.5,0.5" Width="109"/>
         <TextBox x:Name="inputTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="10,65,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="27"/>
-        <Button x:Name="hitungButton" Content="Hitung" Grid.Column="1" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.57" Width="196"/>
+        <Button x:Name="hitungButton" Content="Hitung" Grid.Column="1" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.57" Width="196" Click="hitungButton_Click"/>
         <Label Content="Nilai Tukar Rupiah&#xD;&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Height="25"/>
-        <Label Content="Rp. 0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="resultLabel" Content="Rp. 0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
