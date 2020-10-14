@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,8 +29,19 @@ namespace Simple_Currency_App
         private void hitungButton_Click(object sender, RoutedEventArgs e)
         {
             var nominalString = inputTextBox.Text;
-            var nominalDouble = Convert.ToDouble(nominalString);
-            resultLabel.Content = "Rp. " + Convert.ToString(nominalDouble * 10000);
+
+            Regex regex = new Regex("[^0-9.-]+");
+
+            if (!regex.IsMatch(nominalString))
+            {
+                var nominalDouble = Convert.ToDouble(nominalString);
+                resultLabel.Content = "Rp. " + Convert.ToString(nominalDouble * 4);
+            }
+            else
+            {
+                resultLabel.Content = "Inputan tidak valid";
+            }
+            
         }
     }
 }
